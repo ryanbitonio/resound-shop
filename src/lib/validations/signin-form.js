@@ -3,18 +3,18 @@ import * as z from "zod";
 export const signInFormSchema = z.object({
   email: z
     .string()
-    .nonempty({ message: "Please enter your first name" })
-    .min(3, { message: "First name must be at least 3 characters" })
-    .max(50, { message: "First name must be 50 characters only" })
+    .nonempty({ message: "Please enter your email" })
+    .min(3, { message: "Email must be at least 3 characters" })
+    .max(50, { message: "Email must be 50 characters only" })
     .regex(/^[A-Za-z\s]+$/, {
-      message: "First name should contain only letters and spaces",
+      message: "Email should contain only letters and spaces",
     }),
   password: z
     .string()
-    .nonempty({ message: "Please enter your last name" })
-    .min(3, { message: "Last name must be at least 3 characters" })
-    .max(50, { message: "Last name must be 50 characters only" })
+    .nonempty({ message: "Please enter your password" })
+    .min(3, { message: "Password must be at least 3 characters" })
+    .max(50, { message: "Password must be 50 characters only" })
     .regex(/^[A-Za-z\s]+$/, {
-      message: "Last name should contain only letters and spaces",
+      message: "Password should contain only letters and spaces",
     }),
 });

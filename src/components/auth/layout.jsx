@@ -6,9 +6,9 @@ import {
   CardTitle,
   CardFooter,
 } from "@/components/ui/card";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import SignInForm from "../forms/signin-form";
 import { Button } from "../ui/button";
+import { Icons } from "../icons";
 
 const AuthLayout = () => {
   return (
@@ -21,8 +21,8 @@ const AuthLayout = () => {
           </CardDescription>
         </div>
         <Button variant="outline" type="button">
-          <GitHubLogoIcon className="mr-2 h-4 w-4" />
-          Gmail
+          <Icons.google className=" mr-2 h-4 w-4" />
+          Google
         </Button>
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
