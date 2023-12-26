@@ -1,7 +1,7 @@
-import React from "react";
+import SiteHeader from "../layouts/site-header";
 
 const Home = () => {
-  return <div>home</div>;
+  return <SiteHeader />;
 };
 
 export default Home;

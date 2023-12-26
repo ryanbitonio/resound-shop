@@ -2,7 +2,7 @@ import LoginImage from "../../assets/login-image.webp";
 import AuthLayout from "../auth/layout";
 
 import { AspectRatio } from "../ui/aspect-ratio";
-import Icon from "../ui/icon";
+import { Logo } from "../ui/logo";
 
 const Login = () => {
   return (
@@ -14,7 +14,7 @@ const Login = () => {
             src={LoginImage}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black to-65% md:to-45%" />
-          <Icon />
+          <Logo className="absolute" />
           <p className="absolute left-8 bottom-6 text-white font-sovereign text-4xl uppercase">
             Sovereign
           </p>
