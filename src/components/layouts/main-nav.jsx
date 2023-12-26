@@ -16,10 +16,12 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Logo } from "../ui/logo";
 
-export function MainNav() {
+export function MainNav({ className }) {
   return (
-    <div className="hidden lg:flex items-center justify-center">
-      <Logo className="text-black scale-[0.85]" />
+    <div
+      className={cn("hidden md:flex items-center justify-center", className)}
+    >
+      <Logo height="18" width="18" className="text-black mr-6 text-base" />
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -44,15 +46,11 @@ export function MainNav() {
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
-                </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
+                {siteConfig.clothing.map(({ title, href, description }) => (
+                  <ListItem key={title} title={title} href={href}>
+                    {description}
+                  </ListItem>
+                ))}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
@@ -60,7 +58,7 @@ export function MainNav() {
             <NavigationMenuTrigger>Accessories</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {siteConfig.mainNav.map(({ title, href, description }) => (
+                {siteConfig.accessories.map(({ title, href, description }) => (
                   <ListItem key={title} title={title} href={href}>
                     {description}
                   </ListItem>
