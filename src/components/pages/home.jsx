@@ -2,12 +2,13 @@ import Balancer from "react-wrap-balancer";
 import SiteHeader from "../layouts/site-header";
 import { MainCarousel } from "../main-carousel";
 import ProductsList from "../products-list";
+import SiteFooter from "../layouts/site-footer";
 
 const Home = () => {
   return (
-    <div className="px-4">
+    <>
       <SiteHeader />
-      <main className="mx-auto flex w-full flex-col items-center gap-20 pt-24 justify-between text-center max-w-[63.5rem]">
+      <main className="mx-auto flex w-full flex-col items-center gap-20 pt-24 justify-between text-center max-w-[63.5rem]  px-4">
         <div className="text-center space-y-4 ">
           <Balancer
             as="h1"
@@ -23,7 +24,8 @@ const Home = () => {
         <MainCarousel />
         <ProductsList />
       </main>
-    </div>
+      <SiteFooter />
+    </>
   );
 };
 

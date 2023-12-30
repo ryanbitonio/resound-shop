@@ -10,7 +10,7 @@ module.exports = {
   prefix: "",
   theme: {
     fontFamily: {
-      sovereign: ["Faust"],
+      sovereign: ["Faust", "Inter"],
     },
     container: {
       center: true,

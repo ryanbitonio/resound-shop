@@ -16,7 +16,7 @@ const ProductsList = () => {
       <div className="grid grid-cols-gallery gap-3">
         {siteConfig.gallery.map(({ src, title, price }) => (
           <Card className="rounded-sm" key={crypto.randomUUID()}>
-            <CardContent className="p-0 bg-muted rounded-t-sm">
+            <CardContent className="p-0 bg-muted dark:bg-zinc-100 rounded-t-sm">
               <div className="flex items-center h-48 mx-auto aspect-square">
                 <img
                   src={src}

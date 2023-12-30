@@ -22,59 +22,60 @@ const SiteHeader = () => {
     <>
       <header
         className="
-      flex items-center justify-between md:justify-center md:gap-32 lg:gap-80 min-h-16"
+       sticky top-0 border-b-[1px] bg-white dark:bg-background px-4 z-50 "
       >
-        <MainNav />
-        <MobileNav />
-        <div className="space-x-2 flex items-center">
-          <Search />
-          <CartSheet />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="secondary"
-                className="relative h-8 w-8 rounded-full"
-              >
-                <Avatar className="h-9 w-9">
-                  <AvatarImage
-                    src="https://github.com/shadcn.png"
-                    alt="@shadcn"
-                  />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
+        <div className="flex items-center min-h-16 max-w-[1120px] mx-auto">
+          <MainNav />
+          <MobileNav />
+          <div className="space-x-2 flex items-center justify-end flex-1">
+            <Search />
+            <CartSheet />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="secondary"
+                  className="relative h-8 w-8 rounded-full"
+                >
+                  <Avatar className="h-9 w-9">
+                    <AvatarImage
+                      src="https://github.com/shadcn.png"
+                      alt="@shadcn"
+                    />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem>
+                    <Icons.dashboard className="mr-2 h-4 w-4" />
+                    <span>Dashboard</span>
+                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Icons.creditCard className="mr-2 h-4 w-4" />
+                    <span>Billing</span>
+                    <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Icons.settings className="mr-2 h-4 w-4" />
+                    <span>Settings</span>
+                    <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <Icons.dashboard className="mr-2 h-4 w-4" />
-                  <span>Dashboard</span>
-                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                  <Icons.logout className="mr-2 h-4 w-4" />
+                  <span>Log out</span>
+                  <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Icons.creditCard className="mr-2 h-4 w-4" />
-                  <span>Billing</span>
-                  <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Icons.settings className="mr-2 h-4 w-4" />
-                  <span>Settings</span>
-                  <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <Icons.logout className="mr-2 h-4 w-4" />
-                <span>Log out</span>
-                <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </header>
-      <Separator />
     </>
   );
 };
