@@ -22,7 +22,7 @@ const SiteHeader = () => {
     <>
       <header
         className="
-      flex items-center justify-between md:justify-center md:gap-32 lg:gap-80 min-h-16 px-6"
+      flex items-center justify-between md:justify-center md:gap-32 lg:gap-80 min-h-16"
       >
         <MainNav />
         <MobileNav />

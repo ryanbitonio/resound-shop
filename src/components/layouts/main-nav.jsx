@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { Logo } from "../ui/logo";
+import { Logo } from "../logo";
 
 export function MainNav({ className }) {
   return (

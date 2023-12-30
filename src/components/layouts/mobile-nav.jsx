@@ -15,7 +15,9 @@ import {
 import { siteConfig } from "@/config/site";
 import { Link } from "react-router-dom";
 import { Icons } from "../icons";
-import { Logo } from "../ui/logo";
+import { Logo } from "../logo";
+
+const accordionDefaultValue = ["item-1", "item-2"];
 
 const MobileNav = () => {
   return (
@@ -31,7 +33,7 @@ const MobileNav = () => {
             </SheetTitle>
             <SheetDescription asChild></SheetDescription>
           </SheetHeader>
-          <Accordion type="multiple">
+          <Accordion type="multiple" defaultValue={accordionDefaultValue}>
             <AccordionItem value="item-1">
               <AccordionTrigger>Clothing</AccordionTrigger>
               <AccordionContent className="flex flex-col items-start gap-2">
