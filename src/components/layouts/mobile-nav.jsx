@@ -21,7 +21,7 @@ const accordionDefaultValue = ["item-1", "item-2"];
 
 const MobileNav = () => {
   return (
-    <div className="md:hidden flex items-center">
+    <div className="flex items-center md:hidden">
       <Sheet>
         <SheetTrigger>
           <Icons.stack />
@@ -29,7 +29,7 @@ const MobileNav = () => {
         <SheetContent side="left">
           <SheetHeader>
             <SheetTitle className="mb-4">
-              <Logo height="16" width="16" className="text-black text-base" />
+              <Logo height="16" width="16" className="text-base text-black" />
             </SheetTitle>
             <SheetDescription asChild></SheetDescription>
           </SheetHeader>

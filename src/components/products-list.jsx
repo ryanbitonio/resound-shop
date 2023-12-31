@@ -6,29 +6,29 @@ import Balancer from "react-wrap-balancer";
 
 const ProductsList = () => {
   return (
-    <section className="text-left w-full px-2">
-      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-1">
+    <section className="w-full px-2 text-left">
+      <h2 className="mb-1 text-3xl font-bold tracking-tight sm:text-4xl">
         Featured Products
       </h2>
-      <Balancer className="sm:text-lg  text-base text-muted-foreground mb-8 ">
+      <Balancer className="mb-8 text-base sm:text-lg text-muted-foreground ">
         Explore products from around the world
       </Balancer>
-      <div className="grid grid-cols-gallery gap-3">
+      <div className="grid gap-3 grid-cols-gallery">
         {siteConfig.gallery.map(({ src, title, price }) => (
           <Card className="rounded-sm" key={crypto.randomUUID()}>
-            <CardContent className="p-0 bg-muted dark:bg-zinc-100 rounded-t-sm">
+            <CardContent className="p-0 rounded-t-sm bg-muted dark:bg-zinc-100">
               <div className="flex items-center h-48 mx-auto aspect-square">
                 <img
                   src={src}
-                  className="h-full mx-auto object-contain translate-y-2"
+                  className="object-contain h-full mx-auto translate-y-2"
                 />
               </div>
             </CardContent>
             <Separator />
-            <CardFooter className="flex flex-col items-start text-xs gap-4 pt-4 px-2">
+            <CardFooter className="flex flex-col items-start gap-4 px-2 pt-4 text-xs">
               <div className="space-y-0.5">
-                <p className="font-semibold text-base">{title}</p>
-                <p className="text-muted-foreground text-sm">₱{price}</p>
+                <p className="text-base font-semibold">{title}</p>
+                <p className="text-sm text-muted-foreground">₱{price}</p>
               </div>
               <Button size="sm" className="w-full">
                 Add to cart

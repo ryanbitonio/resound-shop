@@ -27,14 +27,14 @@ const SiteHeader = () => {
         <div className="flex items-center min-h-16 max-w-[1120px] mx-auto">
           <MainNav />
           <MobileNav />
-          <div className="space-x-2 flex items-center justify-end flex-1">
+          <div className="flex items-center justify-end flex-1 space-x-2">
             <Search />
             <CartSheet />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="secondary"
-                  className="relative h-9 w-9 rounded-full"
+                  className="relative rounded-full h-9 w-9"
                 >
                   <Avatar className="h-9 w-9">
                     <AvatarImage
@@ -50,24 +50,24 @@ const SiteHeader = () => {
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
-                    <Icons.dashboard className="mr-2 h-4 w-4" />
+                    <Icons.dashboard className="w-4 h-4 mr-2" />
                     <span>Dashboard</span>
                     <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Icons.creditCard className="mr-2 h-4 w-4" />
+                    <Icons.creditCard className="w-4 h-4 mr-2" />
                     <span>Billing</span>
                     <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Icons.settings className="mr-2 h-4 w-4" />
+                    <Icons.settings className="w-4 h-4 mr-2" />
                     <span>Settings</span>
                     <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <Icons.logout className="mr-2 h-4 w-4" />
+                  <Icons.logout className="w-4 h-4 mr-2" />
                   <span>Log out</span>
                   <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
                 </DropdownMenuItem>

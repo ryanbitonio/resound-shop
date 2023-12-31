@@ -8,10 +8,10 @@ export default function SiteFooter() {
     <>
       <footer className="border-t-[1px] px-4 py-8 mt-24 ">
         <div className="grid max-w-[1120px]  mx-auto">
-          <div className="flex flex-col flex-between gap-10">
+          <div className="flex flex-col gap-10 flex-between">
             <section className="flex flex-col justify-between gap-10 md:flex-row">
               <div>
-                <Logo height="16" width="16" className="text-black text-base" />
+                <Logo height="16" width="16" className="text-base text-black" />
               </div>
               <div className="flex gap-24 sm:gap-48 md:gap-20 lg:gap-52">
                 {siteConfig.footerNav.map(item => (
@@ -24,7 +24,7 @@ export default function SiteFooter() {
                             href={link.href}
                             target={link?.external ? "_blank" : undefined}
                             rel={link?.external ? "noreferrer" : undefined}
-                            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                            className="text-sm transition-colors text-muted-foreground hover:text-foreground"
                           >
                             {link.title}
                             <span className="sr-only">{link.title}</span>
@@ -43,8 +43,8 @@ export default function SiteFooter() {
                 <JoinNewsletterForm />
               </div>
             </section>
-            <section className="flex justify-between w-full items-center">
-              <p className="text-muted-foreground text-sm dark:text-foreground">
+            <section className="flex items-center justify-between w-full">
+              <p className="text-sm text-muted-foreground dark:text-foreground">
                 © 2024, MSJ Resound
               </p>
               <ModeToggle />

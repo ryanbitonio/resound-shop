@@ -52,7 +52,7 @@ export function JoinNewsletterForm() {
                 className="absolute right-[3.5px] top-[4px] z-20 h-7 w-7"
                 size="icon"
               >
-                <PaperPlaneIcon className="h-3 w-3" aria-hidden="true" />
+                <PaperPlaneIcon className="w-3 h-3" aria-hidden="true" />
                 <span className="sr-only">Join newsletter</span>
               </Button>
             </FormItem>

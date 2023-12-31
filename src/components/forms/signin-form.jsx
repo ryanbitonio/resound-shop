@@ -31,7 +31,7 @@ const SignInForm = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-3 -mt-4"
+          className="-mt-4 space-y-3"
         >
           <FormField
             control={form.control}
