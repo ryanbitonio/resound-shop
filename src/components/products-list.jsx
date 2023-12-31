@@ -6,7 +6,7 @@ import Balancer from "react-wrap-balancer";
 
 const ProductsList = () => {
   return (
-    <section className="text-left w-full">
+    <section className="text-left w-full px-2">
       <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-1">
         Featured Products
       </h2>
@@ -25,7 +25,7 @@ const ProductsList = () => {
               </div>
             </CardContent>
             <Separator />
-            <CardFooter className="flex flex-col items-start text-xs gap-4 pt-4 px-4">
+            <CardFooter className="flex flex-col items-start text-xs gap-4 pt-4 px-2">
               <div className="space-y-0.5">
                 <p className="font-semibold text-base">{title}</p>
                 <p className="text-muted-foreground text-sm">₱{price}</p>
