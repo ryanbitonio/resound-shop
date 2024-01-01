@@ -1,8 +1,8 @@
 import LoginImage from "../../assets/login-image.webp";
 import AuthLayout from "../auth/layout";
 
-import { AspectRatio } from "../ui/aspect-ratio";
 import { Logo } from "../logo";
+import { AspectRatio } from "../ui/aspect-ratio";
 
 const Login = () => {
   return (

@@ -1,4 +1,4 @@
-import { MoonIcon, SunIcon, LaptopIcon } from "@radix-ui/react-icons";
+import { LaptopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
 import { Button } from "@/components/ui/button";
 import {

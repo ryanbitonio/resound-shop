@@ -16,7 +16,7 @@ export default function SiteFooter() {
               <div className="flex gap-24 sm:gap-48 md:gap-20 lg:gap-52">
                 {siteConfig.footerNav.map(item => (
                   <div key={item.title} className="space-y-3">
-                    <h4 className="text-base font-medium">{item.title}</h4>
+                    <h3 className="text-base font-medium">{item.title}</h3>
                     <ul className="space-y-2.5">
                       {item.items.map(link => (
                         <li key={link.title}>

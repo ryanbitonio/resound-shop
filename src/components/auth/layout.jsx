@@ -2,13 +2,13 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-  CardFooter,
 } from "@/components/ui/card";
 import SignInForm from "../forms/signin-form";
-import { Button } from "../ui/button";
 import { Icons } from "../icons";
+import { Button } from "../ui/button";
 
 const AuthLayout = () => {
   return (

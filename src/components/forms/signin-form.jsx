@@ -22,9 +22,7 @@ const SignInForm = () => {
     },
   });
 
-  function onSubmit(values) {
-    console.log(values);
-  }
+  function onSubmit() {}
 
   return (
     <>

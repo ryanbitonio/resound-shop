@@ -14,7 +14,7 @@ const CartSheet = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button aria-label="Open cart" variant="outline" size="icon">
           <Icons.cart />
         </Button>
       </SheetTrigger>

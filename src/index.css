@@ -4,12 +4,10 @@
 
 @layer base {
   @font-face {
+    font-display: swap;
     font-family: "Faust";
-    src: url("/fonts/Faust.otf");
-  }
-
-  html {
-    font-family: "Inter", system-ui, sans-serif;
+    src: url("/fonts/Faust.woff2") format("woff2"),
+      url("/fonts/Faust.woff") format("woff");
   }
 
   :root {

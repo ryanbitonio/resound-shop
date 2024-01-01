@@ -1,12 +1,12 @@
-import model1 from "../assets/model-1.jpg";
-import model2 from "../assets/model-2.jpg";
-import model3 from "../assets/model-3.jpg";
-import model4 from "../assets/model-4.jpg";
-import model5 from "../assets/model-5.jpg";
+import model1 from "../assets/models/model-1.webp";
+import model2 from "../assets/models/model-2.webp";
+import model3 from "../assets/models/model-3.webp";
+import model4 from "../assets/models/model-4.webp";
+import model5 from "../assets/models/model-5.webp";
 
 import ticket from "../assets/featured-products/ticket.jpg";
-import totebag from "../assets/featured-products/totebag.png";
-import shirt from "../assets/featured-products/shirt.png";
+import totebag from "../assets/featured-products/totebag.webp";
+import shirt from "../assets/featured-products/shirt.webp";
 
 const links = {
   facebook: "https://www.facebook.com/MSJRESOUND",
@@ -70,21 +70,64 @@ export const siteConfig = {
   ],
 
   gallery: [
-    { src: ticket, title: "Sovereign Ticket", price: "500" },
-    { src: totebag, title: "Sovereign Totebag", price: "500" },
-    { src: shirt, title: "Sovereign Shirt", price: "500" },
-    { src: ticket, title: "Sovereign Ticket", price: "500" },
-    { src: ticket, title: "Sovereign Ticket", price: "500" },
-    { src: totebag, title: "Sovereign Totebag", price: "500" },
-    { src: shirt, title: "Sovereign Shirt", price: "500" },
-    { src: ticket, title: "Sovereign Ticket", price: "500" },
+    {
+      src: ticket,
+      title: "Sovereign Ticket",
+      price: "500",
+      alt: "Resound Sovereign ticket",
+    },
+    {
+      src: totebag,
+      title: "Sovereign Totebag",
+      price: "500",
+      alt: "Resound Sovereign totebag",
+    },
+    {
+      src: shirt,
+      title: "Sovereign Shirt",
+      price: "500",
+      alt: "Resound Sovereign shirt",
+    },
+    {
+      src: ticket,
+      title: "Sovereign Ticket",
+      price: "500",
+      alt: "Resound Sovereign ticket",
+    },
+    {
+      src: ticket,
+      title: "Sovereign Ticket",
+      price: "500",
+      alt: "Resound Sovereign ticket",
+    },
+    {
+      src: totebag,
+      title: "Sovereign Totebag",
+      price: "500",
+      alt: "Resound Sovereign totebag",
+    },
+    {
+      src: shirt,
+      title: "Sovereign Shirt",
+      price: "500",
+      alt: "Resound Sovereign shirt",
+    },
+    {
+      src: ticket,
+      title: "Sovereign Ticket",
+      price: "500",
+      alt: "Resound Sovereign ticket",
+    },
   ],
   carousel: [
-    { src: model1 },
-    { src: model2 },
-    { src: model3 },
-    { src: model4 },
-    { src: model5 },
+    { src: model1, alt: "A woman with curly hair sitting on a white surface" },
+    {
+      src: model2,
+      alt: "A man in a white t-shirt posing against a plain white background",
+    },
+    { src: model3, alt: "A woman in a black turtleneck" },
+    { src: model4, alt: "A woman posing for a picture" },
+    { src: model5, alt: "A group of knit hats and a cactus" },
   ],
 
   clothing: [

@@ -1,21 +1,20 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import CartSheet from "../ui/cart-sheet";
-import Search from "../ui/search";
-import { Separator } from "../ui/separator";
-import { MainNav } from "./main-nav";
-import MobileNav from "./mobile-nav";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  DropdownMenuGroup,
   DropdownMenuShortcut,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Icons } from "../icons";
 import { Button } from "../ui/button";
+import CartSheet from "../ui/cart-sheet";
+import Search from "../ui/search";
+import { MainNav } from "./main-nav";
+import MobileNav from "./mobile-nav";
 
 const SiteHeader = () => {
   return (
