@@ -2,6 +2,8 @@ import { siteConfig } from "@/config/site";
 import { JoinNewsletterForm } from "../forms/join-newsletter-form";
 import { Logo } from "../logo";
 import { ModeToggle } from "./mode-toggle";
+import { CurrencyToggle } from "../currency-toggle";
+import Balancer from "react-wrap-balancer";
 
 export default function SiteFooter() {
   return (
@@ -44,10 +46,13 @@ export default function SiteFooter() {
               </div>
             </section>
             <section className="flex items-center justify-between w-full">
-              <p className="text-sm text-muted-foreground dark:text-foreground">
+              <Balancer className="text-sm text-muted-foreground dark:text-foreground">
                 © 2024, MSJ Resound
-              </p>
-              <ModeToggle />
+              </Balancer>
+              <div className="flex gap-2">
+                <CurrencyToggle />
+                <ModeToggle />
+              </div>
             </section>
           </div>
         </div>

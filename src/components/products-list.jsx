@@ -1,18 +1,15 @@
 import { siteConfig } from "@/config/site";
+import { Link } from "react-router-dom";
 import Balancer from "react-wrap-balancer";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardFooter } from "./ui/card";
 import { Separator } from "./ui/separator";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 
-const ProductsList = () => {
+const ProductsList = ({ children }) => {
   return (
     <section className="w-full text-left">
-      <h2 className="mb-1 text-3xl font-bold tracking-tight sm:text-4xl">
-        Featured Products
-      </h2>
-      <Balancer className="mb-8 text-base sm:text-lg text-muted-foreground ">
-        Explore products from around the world
-      </Balancer>
+      {children}
       <div className="grid gap-3 grid-cols-gallery">
         {siteConfig.gallery.map(({ src, title, price, alt }) => (
           <Card className="rounded-sm" key={crypto.randomUUID()}>
