@@ -19,7 +19,7 @@ const Login = () => {
             Sovereign
           </p>
         </AspectRatio>
-        <section className="absolute flex items-center justify-center w-full h-full md:col-span-2 lg:col-auto md:static">
+        <section className="absolute flex items-center justify-center w-full h-full px-8 md:col-span-2 lg:col-auto md:static">
           <AuthLayout />
         </section>
       </div>

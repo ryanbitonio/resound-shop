@@ -18,7 +18,6 @@ import { Button } from "../ui/button";
 export default function Products() {
   return (
     <>
-      <SiteHeader />
       <main className="px-4">
         <div className="mx-auto flex w-full flex-col items-center gap-20 pt-8 justify-between text-center max-w-[1120px]">
           <ProductsList>
@@ -56,7 +55,6 @@ export default function Products() {
           </ProductsList>
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 }

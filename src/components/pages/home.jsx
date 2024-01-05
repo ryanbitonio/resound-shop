@@ -10,7 +10,6 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 const Home = () => {
   return (
     <>
-      <SiteHeader />
       <main className="px-4">
         <div className="mx-auto flex w-full flex-col items-center gap-20 pt-24 justify-between text-center max-w-[1120px]">
           <div className="space-y-4 text-center">
@@ -49,7 +48,6 @@ const Home = () => {
           </ProductsList>
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 };
