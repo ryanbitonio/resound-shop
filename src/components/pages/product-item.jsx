@@ -40,7 +40,8 @@ export default function ProductItem() {
             </Card>
             <ThumbnailCarousel src={shirtDisplay} className="self-center" />
           </div>
-          <div className="flex-1 space-y-4 min-w-0 md:min-w-[414px]">
+          <div className="flex-1 space-y-5 min-w-0 md:min-w-[414px] -translate-y-0 md:-translate-y-6">
+            <Separator className="block md:hidden " />
             <div>
               <h2 className="mb-1 text-3xl font-bold tracking-tight sm:text-3xl">
                 Sovereign Shirt
@@ -51,9 +52,7 @@ export default function ProductItem() {
             </div>
             <Separator />
             <div className="space-y-4">
-              <p className="text-base sm:text-base text-muted-foreground ">
-                In stock
-              </p>
+              <p className="text-sm text-muted-foreground ">In stock</p>
               {Array.from({ length: 5 }).map((_, index) => (
                 <Icons.star
                   key={crypto.randomUUID()}
@@ -63,8 +62,8 @@ export default function ProductItem() {
               <ProductItemForm />
             </div>
             <Separator />
-            <p className="text-base font-medium sm:text-base">Description</p>
-            <p className="text-base text-justify sm:text-base text-muted-foreground">
+            <p className="text-sm font-medium ">Description</p>
+            <p className="text-sm text-justify text-muted-foreground">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
