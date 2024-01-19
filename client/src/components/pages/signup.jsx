@@ -1,13 +1,11 @@
 import LoginImage from "../../assets/login-image.webp";
 import AuthLayout from "../auth/layout";
-import SigninForm from "../forms/signin-form";
+import SignupForm from "../forms/signup-form";
 
 import { Logo } from "../logo";
 import { AspectRatio } from "../ui/aspect-ratio";
 
-import { Toaster } from "../ui/toaster";
-
-const Login = () => {
+const Signup = () => {
   return (
     <>
       <div className="grid min-h-screen grid-cols-1 lg:grid-cols-2 md:grid-cols-3">
@@ -24,19 +22,18 @@ const Login = () => {
         </AspectRatio>
         <section className="absolute flex items-center justify-center w-full h-full px-8 md:col-span-2 lg:col-auto md:static">
           <AuthLayout
-            title="Sign in"
-            description="Choose your preferred sign in method"
-            account="Don't have an account?"
-            alternative="Sign up"
-            href="/signup"
+            title="Sign up"
+            description="Choose your preferred sign up method"
+            account="Already have an account?"
+            alternative="Sign in"
+            href="/login"
           >
-            <SigninForm />
+            <SignupForm />
           </AuthLayout>
         </section>
       </div>
-      <Toaster />
     </>
   );
 };
 
-export default Login;
+export default Signup;

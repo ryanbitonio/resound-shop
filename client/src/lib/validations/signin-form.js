@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-export const signInFormSchema = z.object({
+export const signinFormSchema = z.object({
   email: z
     .string()
     .nonempty({ message: "Please enter your email" })

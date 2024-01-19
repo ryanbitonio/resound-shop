@@ -6,19 +6,25 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import SignInForm from "../forms/signin-form";
 import { Icons } from "../icons";
 import { Button } from "../ui/button";
 
-const AuthLayout = () => {
+import { Link } from "react-router-dom";
+
+const AuthLayout = ({
+  title,
+  description,
+  account,
+  alternative,
+  href,
+  children,
+}) => {
   return (
     <Card className="w-[26rem]">
       <CardHeader className="space-y-4">
         <div className="space-y-1">
-          <CardTitle className="text-2xl">Sign in</CardTitle>
-          <CardDescription className="text-sm">
-            Choose your preferred sign in method
-          </CardDescription>
+          <CardTitle className="text-2xl">{title}</CardTitle>
+          <CardDescription className="text-sm">{description}</CardDescription>
         </div>
         <Button variant="outline" type="button">
           <Icons.google className="w-4 h-4 mr-2 " />
@@ -35,21 +41,17 @@ const AuthLayout = () => {
           </div>
         </div>
       </CardHeader>
-      <CardContent>
-        <SignInForm />
-      </CardContent>
+      <CardContent>{children}</CardContent>
       <CardFooter className="flex flex-wrap items-center justify-between gap-2">
         <div className="text-sm text-muted-foreground">
-          <span className="hidden mr-1 sm:inline-block">
-            Don&apos;t have an account?
-          </span>
-          <a
-            aria-label="Sign up"
-            href="/"
+          <span className="hidden mr-1 sm:inline-block">{account}</span>
+          <Link
+            aria-label={alternative}
+            to={href}
             className="text-primary underline-offset-4 hover:underline"
           >
-            Sign up
-          </a>
+            {alternative}
+          </Link>
         </div>
         <a
           aria-label="Reset password"

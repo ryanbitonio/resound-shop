@@ -15,6 +15,7 @@ import CartSheet from "../ui/cart-sheet";
 import Search from "../ui/search";
 import { MainNav } from "./main-nav";
 import MobileNav from "./mobile-nav";
+import { Link } from "react-router-dom";
 
 const SiteHeader = () => {
   return (
@@ -65,11 +66,13 @@ const SiteHeader = () => {
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <Icons.logout className="w-4 h-4 mr-2" />
-                  <span>Log out</span>
-                  <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-                </DropdownMenuItem>
+                <Link to="/login">
+                  <DropdownMenuItem>
+                    <Icons.logout className="w-4 h-4 mr-2" />
+                    <span>Log out</span>
+                    <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </Link>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>

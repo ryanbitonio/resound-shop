@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 import {
   Form,
@@ -13,13 +14,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { signinFormSchema } from "@/lib/validations/signin-form";
 
-import { useNavigate } from "react-router-dom";
-
 import axios from "axios";
 import { Icons } from "../icons";
 
-const SigninForm = () => {
+import { useToast } from "../ui/use-toast";
+
+const SignupForm = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const form = useForm({
     resolver: zodResolver(signinFormSchema),
@@ -38,9 +40,15 @@ const SigninForm = () => {
 
   async function onSubmit(values) {
     try {
-      await axios.post("http://localhost:8000/api/user/login", values);
+      await axios.post("http://localhost:8000/api/user/signup", values);
 
-      navigate("/");
+      navigate("/login");
+
+      toast({
+        title: "Registered Successfully!",
+        description: "You can now login your account.",
+        duration: 5000,
+      });
     } catch (err) {
       console.error(err);
     } finally {
@@ -82,11 +90,12 @@ const SigninForm = () => {
               </FormItem>
             )}
           />
+
           <Button className="w-full" disabled={isSubmitting} type="submit">
             {isSubmitting ? (
               <Icons.loading className="w-4 h-4 mr-2 animate-spin" />
             ) : (
-              "Sign in"
+              "Continue"
             )}
           </Button>
         </form>
@@ -95,4 +104,4 @@ const SigninForm = () => {
   );
 };
 
-export default SigninForm;
+export default SignupForm;
