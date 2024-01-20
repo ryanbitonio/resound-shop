@@ -10,21 +10,17 @@ import { Icons } from "../icons";
 import { Button } from "../ui/button";
 
 import { Link } from "react-router-dom";
+import SigninForm from "../forms/signin-form";
 
-const AuthLayout = ({
-  title,
-  description,
-  account,
-  alternative,
-  href,
-  children,
-}) => {
+const LoginAuthLayout = () => {
   return (
     <Card className="w-[26rem]">
       <CardHeader className="space-y-4">
         <div className="space-y-1">
-          <CardTitle className="text-2xl">{title}</CardTitle>
-          <CardDescription className="text-sm">{description}</CardDescription>
+          <CardTitle className="text-2xl">Sign in</CardTitle>
+          <CardDescription className="text-sm">
+            Choose your preferred sign in method
+          </CardDescription>
         </div>
         <Button variant="outline" type="button">
           <Icons.google className="w-4 h-4 mr-2 " />
@@ -41,16 +37,20 @@ const AuthLayout = ({
           </div>
         </div>
       </CardHeader>
-      <CardContent>{children}</CardContent>
+      <CardContent>
+        <SigninForm />
+      </CardContent>
       <CardFooter className="flex flex-wrap items-center justify-between gap-2">
         <div className="text-sm text-muted-foreground">
-          <span className="hidden mr-1 sm:inline-block">{account}</span>
+          <span className="hidden mr-1 sm:inline-block">
+            Don't have an account?
+          </span>
           <Link
-            aria-label={alternative}
-            to={href}
+            aria-label="Sign up"
+            to="/signup"
             className="text-primary underline-offset-4 hover:underline"
           >
-            {alternative}
+            Sign up
           </Link>
         </div>
         <a
@@ -65,4 +65,4 @@ const AuthLayout = ({
   );
 };
 
-export default AuthLayout;
+export default LoginAuthLayout;

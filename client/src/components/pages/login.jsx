@@ -1,6 +1,5 @@
 import LoginImage from "../../assets/login-image.webp";
-import AuthLayout from "../auth/layout";
-import SigninForm from "../forms/signin-form";
+import LoginAuthLayout from "../auth/login-layout";
 
 import { Logo } from "../logo";
 import { AspectRatio } from "../ui/aspect-ratio";
@@ -23,15 +22,7 @@ const Login = () => {
           </p>
         </AspectRatio>
         <section className="absolute flex items-center justify-center w-full h-full px-8 md:col-span-2 lg:col-auto md:static">
-          <AuthLayout
-            title="Sign in"
-            description="Choose your preferred sign in method"
-            account="Don't have an account?"
-            alternative="Sign up"
-            href="/signup"
-          >
-            <SigninForm />
-          </AuthLayout>
+          <LoginAuthLayout />
         </section>
       </div>
       <Toaster />
