@@ -47,7 +47,7 @@ const SignupAuthLayout = () => {
           </span>
           <Link
             aria-label="Sign in"
-            to="/login"
+            to="/signin"
             className="text-primary underline-offset-4 hover:underline"
           >
             Sign in

@@ -12,7 +12,7 @@ import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import SigninForm from "../forms/signin-form";
 
-const LoginAuthLayout = () => {
+const SigninAuthLayout = () => {
   return (
     <Card className="w-[26rem]">
       <CardHeader className="space-y-4">
@@ -65,4 +65,4 @@ const LoginAuthLayout = () => {
   );
 };
 
-export default LoginAuthLayout;
+export default SigninAuthLayout;

@@ -1,4 +1,4 @@
-import LoginImage from "../../assets/login-image.webp";
+import LoginImage from "../../assets/signin-image.webp";
 import SignupAuthLayout from "../auth/signup-layout";
 
 import { Logo } from "../logo";

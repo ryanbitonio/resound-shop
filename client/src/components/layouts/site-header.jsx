@@ -66,7 +66,7 @@ const SiteHeader = () => {
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <Link to="/login">
+                <Link to="/signin">
                   <DropdownMenuItem>
                     <Icons.logout className="w-4 h-4 mr-2" />
                     <span>Log out</span>

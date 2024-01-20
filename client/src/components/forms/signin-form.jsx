@@ -38,7 +38,7 @@ const SigninForm = () => {
 
   async function onSubmit(values) {
     try {
-      await axios.post("http://localhost:8000/api/user/login", values);
+      await axios.post("http://localhost:8000/api/user/signin", values);
 
       navigate("/");
     } catch (err) {

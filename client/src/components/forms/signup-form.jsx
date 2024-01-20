@@ -42,7 +42,7 @@ const SignupForm = () => {
     try {
       await axios.post("http://localhost:8000/api/user/signup", values);
 
-      navigate("/login");
+      navigate("/signin");
 
       toast({
         title: "Registered Successfully!",

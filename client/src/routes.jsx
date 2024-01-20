@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Login from "./components/pages/login";
+import Signin from "./components/pages/signin";
 import Home from "./components/pages/home";
 import Products from "./components/pages/products";
 import Layout from "./components/pages/layout";
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "/signup", element: <Signup /> },
-  { path: "/login", element: <Login /> },
+  { path: "/signin", element: <Signin /> },
 ]);
 
 export default router;

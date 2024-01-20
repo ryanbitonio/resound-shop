@@ -1,12 +1,12 @@
-import LoginImage from "../../assets/login-image.webp";
-import LoginAuthLayout from "../auth/login-layout";
+import LoginImage from "../../assets/signin-image.webp";
+import SigninAuthLayout from "../auth/signin-layout";
 
 import { Logo } from "../logo";
 import { AspectRatio } from "../ui/aspect-ratio";
 
 import { Toaster } from "../ui/toaster";
 
-const Login = () => {
+const Signin = () => {
   return (
     <>
       <div className="grid min-h-screen grid-cols-1 lg:grid-cols-2 md:grid-cols-3">
@@ -22,7 +22,7 @@ const Login = () => {
           </p>
         </AspectRatio>
         <section className="absolute flex items-center justify-center w-full h-full px-8 md:col-span-2 lg:col-auto md:static">
-          <LoginAuthLayout />
+          <SigninAuthLayout />
         </section>
       </div>
       <Toaster />
@@ -30,4 +30,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signin;
