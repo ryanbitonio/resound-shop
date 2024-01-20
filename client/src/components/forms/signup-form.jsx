@@ -17,11 +17,10 @@ import { signinFormSchema } from "@/lib/validations/signin-form";
 import axios from "axios";
 import { Icons } from "../icons";
 
-import { useToast } from "../ui/use-toast";
+import { toast } from "sonner";
 
 const SignupForm = () => {
   const navigate = useNavigate();
-  const { toast } = useToast();
 
   const form = useForm({
     resolver: zodResolver(signinFormSchema),
@@ -44,13 +43,12 @@ const SignupForm = () => {
 
       navigate("/signin");
 
-      toast({
-        title: "Registered Successfully!",
-        description: "You can now login your account.",
-        duration: 5000,
+      toast.success("Registered Successfully!", {
+        description: "You may now login your account.",
       });
     } catch (err) {
       console.error(err);
+      toast.error("Email is already taken. Please try another.");
     } finally {
       reset();
     }

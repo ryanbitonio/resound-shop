@@ -4,8 +4,6 @@ import SigninAuthLayout from "../auth/signin-layout";
 import { Logo } from "../logo";
 import { AspectRatio } from "../ui/aspect-ratio";
 
-import { Toaster } from "../ui/toaster";
-
 const Signin = () => {
   return (
     <>
@@ -25,7 +23,6 @@ const Signin = () => {
           <SigninAuthLayout />
         </section>
       </div>
-      <Toaster />
     </>
   );
 };

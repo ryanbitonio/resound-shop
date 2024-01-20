@@ -4,7 +4,7 @@ import "dotenv/config";
 import helmet from "helmet";
 import cors from "cors";
 
-import { errorHandler } from "./middleware/errorMiddleware.js";
+import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 import { mongoConnect } from "./services/mongo.js";
 
 import cartRouter from "./routes/cartRoutes.js";
@@ -27,6 +27,7 @@ app.use(helmet());
 app.use("/api/cart", cartRouter);
 app.use("/api/user", userRouter);
 
+app.use(notFound);
 app.use(errorHandler);
 
 async function startServer() {

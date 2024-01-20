@@ -1,20 +1,18 @@
-import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
+import User from "../models/userModel.js";
 import generateToken from "../utils/generateToken.js";
 
 export const signupUser = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    res.status(400);
-    throw new Error("All fields are required");
+    return res.status(400).json({ message: "All fields are required" });
   }
 
   const userExists = await User.findOne({ email });
 
   if (userExists) {
-    res.status(400);
-    throw new Error("User already exists");
+    return res.status(400).json({ message: "User already exists" });
   }
 
   const salt = await bcrypt.genSalt(10);
@@ -32,8 +30,7 @@ export const signupUser = async (req, res) => {
       token: generateToken(user._id),
     });
   } else {
-    res.status(400);
-    throw new Error("Invalid user data");
+    res.status(400).json({ message: "Invalid user data" });
   }
 };
 
@@ -49,8 +46,7 @@ export const loginUser = async (req, res) => {
       token: generateToken(userExists._id),
     });
   } else {
-    res.status(400);
-    throw new Error("Invalid user data");
+    res.status(400).json({ message: "Invalid user data" });
   }
 };
 
