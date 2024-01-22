@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-export const signinFormSchema = z.object({
+export const authSchema = z.object({
   email: z
     .string()
     .nonempty({ message: "Please enter your email" })
@@ -13,5 +13,9 @@ export const signinFormSchema = z.object({
     .string()
     .nonempty({ message: "Please enter your password" })
     .min(8, { message: "Password must be at least 8 characters" })
-    .max(32, { message: "Password must be 32 characters only" }),
+    .max(32, { message: "Password must be 32 characters only" })
+    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/, {
+      message:
+        "Password must contain at least one uppercase, one lowercase, one number and one special character",
+    }),
 });

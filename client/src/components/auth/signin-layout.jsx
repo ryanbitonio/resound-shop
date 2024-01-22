@@ -22,9 +22,11 @@ const SigninAuthLayout = () => {
             Choose your preferred sign in method
           </CardDescription>
         </div>
-        <Button variant="outline" type="button">
-          <Icons.google className="w-4 h-4 mr-2 " />
-          Google
+        <Button asChild variant="outline" type="button">
+          <Link to="http://localhost:8000/auth/google">
+            <Icons.google className="w-4 h-4 mr-2 " />
+            Google
+          </Link>
         </Button>
         <div className="relative">
           <div className="absolute inset-0 flex items-center">

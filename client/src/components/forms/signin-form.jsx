@@ -11,18 +11,20 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signinFormSchema } from "@/lib/validations/signin-form";
+import { authSchema } from "@/lib/validations/auth";
 
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import { Icons } from "../icons";
 
+import { toast } from "sonner";
+
 const SigninForm = () => {
   const navigate = useNavigate();
 
   const form = useForm({
-    resolver: zodResolver(signinFormSchema),
+    resolver: zodResolver(authSchema),
     defaultValues: {
       email: "",
       password: "",
@@ -33,7 +35,7 @@ const SigninForm = () => {
     control,
     formState: { isSubmitting },
     handleSubmit,
-    reset,
+    setFocus,
   } = form;
 
   async function onSubmit(values) {
@@ -42,9 +44,13 @@ const SigninForm = () => {
 
       navigate("/");
     } catch (err) {
-      console.error(err);
+      if (err.response && err.response.status === 401) {
+        toast.error("The verification strategy is not valid for this account.");
+      } else {
+        toast.error("Couldn't find your account.");
+      }
     } finally {
-      reset();
+      setFocus("email");
     }
   }
 

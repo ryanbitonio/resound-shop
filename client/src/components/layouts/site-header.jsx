@@ -66,7 +66,7 @@ const SiteHeader = () => {
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <Link to="/signin">
+                <Link to="http://localhost:8000/api/user/signout">
                   <DropdownMenuItem>
                     <Icons.logout className="w-4 h-4 mr-2" />
                     <span>Log out</span>

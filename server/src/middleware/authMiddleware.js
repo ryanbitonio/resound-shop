@@ -26,3 +26,11 @@ export const protect = async (req, res, next) => {
     throw new Error("Not authorized, no token");
   }
 };
+
+export const googleProtect = (req, res) => {
+  if (req.user) {
+    res.status(200).send(req.user);
+  } else {
+    res.redirect("/api/user/signin");
+  }
+};

@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import User from "../models/userModel.js";
 import generateToken from "../utils/generateToken.js";
 
@@ -21,6 +21,7 @@ export const signupUser = async (req, res) => {
   const user = await User.create({
     email,
     password: hashedPassword,
+    signinMethod: "personal",
   });
 
   if (user) {
@@ -34,22 +35,41 @@ export const signupUser = async (req, res) => {
   }
 };
 
-export const loginUser = async (req, res) => {
+export const signinUser = async (req, res) => {
   const { email, password } = req.body;
 
   const userExists = await User.findOne({ email });
 
-  if (userExists && (await bcrypt.compare(password, userExists.password))) {
+  if (
+    userExists &&
+    userExists.signinMethod === "personal" &&
+    bcrypt.compare(password, userExists.password)
+  ) {
     res.json({
       _id: userExists.id,
       email: userExists.email,
       token: generateToken(userExists._id),
+    });
+  } else if (userExists && userExists.signinMethod === "google") {
+    res.status(401).json({
+      message: "The verification strategy is not valid for this account",
     });
   } else {
     res.status(400).json({ message: "Invalid user data" });
   }
 };
 
-export const logoutUser = async (req, res) => {
-  res.json({ message: "Logging out user" });
+export const signoutUser = (req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("http://localhost:5173/signin");
+  });
+};
+
+export const failedLogin = (req, res) => {
+  res.json({
+    error: "Failed to log in",
+  });
 };

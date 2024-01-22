@@ -12,7 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signinFormSchema } from "@/lib/validations/signin-form";
+import { authSchema } from "@/lib/validations/auth";
 
 import axios from "axios";
 import { Icons } from "../icons";
@@ -23,7 +23,7 @@ const SignupForm = () => {
   const navigate = useNavigate();
 
   const form = useForm({
-    resolver: zodResolver(signinFormSchema),
+    resolver: zodResolver(authSchema),
     defaultValues: {
       email: "",
       password: "",
@@ -35,6 +35,7 @@ const SignupForm = () => {
     formState: { isSubmitting },
     handleSubmit,
     reset,
+    setFocus,
   } = form;
 
   async function onSubmit(values) {
@@ -50,7 +51,7 @@ const SignupForm = () => {
       console.error(err);
       toast.error("Email is already taken. Please try another.");
     } finally {
-      reset();
+      setFocus("email");
     }
   }
 
