@@ -14,7 +14,7 @@ const Signin = () => {
             src={LoginImage}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black to-65% md:to-45%" />
-          <Logo className="absolute" />
+          <Logo href="/signin" className="absolute" />
           <p className="absolute text-4xl text-white uppercase left-8 bottom-6 font-sovereign">
             Sovereign
           </p>

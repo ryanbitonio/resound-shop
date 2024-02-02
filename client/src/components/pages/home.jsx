@@ -1,11 +1,9 @@
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { Link } from "react-router-dom";
 import Balancer from "react-wrap-balancer";
-import SiteHeader from "../layouts/site-header";
 import { MainCarousel } from "../main-carousel";
 import ProductsList from "../products-list";
-import SiteFooter from "../layouts/site-footer";
 import { Button } from "../ui/button";
-import { Link } from "react-router-dom";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 const Home = () => {
   return (

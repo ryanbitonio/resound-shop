@@ -25,6 +25,7 @@ export const app = express();
 app.use(
   cors({
     origin: process.env.PROD_RESOUND_SHOP_CLIENT || "http://localhost:5173",
+    credentials: true,
   })
 );
 
@@ -35,14 +36,14 @@ app.use(
   })
 );
 
-app.use(function (request, response, next) {
-  if (request.session && !request.session.regenerate) {
-    request.session.regenerate = cb => {
+app.use((req, res, next) => {
+  if (req.session && !req.session.regenerate) {
+    req.session.regenerate = cb => {
       cb();
     };
   }
-  if (request.session && !request.session.save) {
-    request.session.save = cb => {
+  if (req.session && !req.session.save) {
+    req.session.save = cb => {
       cb();
     };
   }
@@ -57,8 +58,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 
 app.use("/api/cart", cartRouter);
-app.use("/api/user", userRouter);
 app.use("/auth", authRouter);
+app.use("/api/user", userRouter);
 
 app.use(notFound);
 app.use(errorHandler);

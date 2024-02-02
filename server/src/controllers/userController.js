@@ -60,7 +60,7 @@ export const signinUser = async (req, res) => {
 };
 
 export const signoutUser = (req, res, next) => {
-  req.logout(function (err) {
+  req.logout(err => {
     if (err) {
       return next(err);
     }

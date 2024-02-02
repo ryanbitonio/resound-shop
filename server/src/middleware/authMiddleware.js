@@ -27,10 +27,10 @@ export const protect = async (req, res, next) => {
   }
 };
 
-export const googleProtect = (req, res) => {
+export const googleProtect = (req, res, next) => {
   if (req.user) {
     res.status(200).send(req.user);
   } else {
-    res.redirect("/api/user/signin");
+    next();
   }
 };
