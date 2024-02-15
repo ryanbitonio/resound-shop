@@ -19,6 +19,9 @@ import axios from "axios";
 import { Icons } from "../icons";
 
 import { toast } from "sonner";
+import ApiClient from "@/services/api-client";
+
+const apiClient = new ApiClient("/api/user/signin");
 
 const SigninForm = () => {
   const navigate = useNavigate();
@@ -40,8 +43,7 @@ const SigninForm = () => {
 
   async function onSubmit(values) {
     try {
-      await axios.post("http://localhost:8000/api/user/signin", values);
-
+      apiClient.post(values);
       navigate("/");
     } catch (err) {
       if (err.response && err.response.status === 401) {

@@ -9,13 +9,13 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Link } from "react-router-dom";
 import { Icons } from "../icons";
 import { Button } from "../ui/button";
 import CartSheet from "../ui/cart-sheet";
 import Search from "../ui/search";
 import { MainNav } from "./main-nav";
 import MobileNav from "./mobile-nav";
-import { Link } from "react-router-dom";
 
 const SiteHeader = () => {
   return (
@@ -66,7 +66,10 @@ const SiteHeader = () => {
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <Link to="http://localhost:8000/api/user/signout">
+                <Link
+                  to="http://localhost:8000/api/user/signout"
+                  onClick={() => localStorage.removeItem("token")}
+                >
                   <DropdownMenuItem>
                     <Icons.logout className="w-4 h-4 mr-2" />
                     <span>Log out</span>

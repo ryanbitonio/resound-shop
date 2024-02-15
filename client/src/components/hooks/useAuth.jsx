@@ -1,17 +1,12 @@
+import ApiClient from "@/services/api-client";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+
+const apiClient = new ApiClient("/api/user/verify");
 
 const useAuth = () => {
-  const fetchUser = async () => {
-    const { data } = await axios.get("http://localhost:8000/api/user/verify", {
-      withCredentials: true,
-    });
-    return await data;
-  };
-
   return useQuery({
     queryKey: ["user"],
-    queryFn: fetchUser,
+    queryFn: apiClient.getAll,
     retry: 1,
   });
 };
