@@ -15,11 +15,10 @@ import { authSchema } from "@/lib/validations/auth";
 
 import { useNavigate } from "react-router-dom";
 
-import axios from "axios";
 import { Icons } from "../icons";
 
-import { toast } from "sonner";
 import ApiClient from "@/services/api-client";
+import { toast } from "sonner";
 
 const apiClient = new ApiClient("/api/user/signin");
 
@@ -43,7 +42,8 @@ const SigninForm = () => {
 
   async function onSubmit(values) {
     try {
-      apiClient.post(values);
+      const data = await apiClient.post(values);
+      console.log('token here: ', data)
       navigate("/");
     } catch (err) {
       if (err.response && err.response.status === 401) {

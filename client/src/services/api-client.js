@@ -23,7 +23,6 @@ class ApiClient {
       });
       return data;
     } catch (err) {
-      controller.abort();
       console.error(err);
       throw err;
     }
@@ -32,12 +31,19 @@ class ApiClient {
   post = async values => {
     try {
       const { data } = await axiosInstance.post(this.endpoint, values);
-
-      if (data && data.token)
-        localStorage.setItem("token", JSON.stringify(data.token));
       return data;
     } catch (err) {
       console.error(err);
+    }
+  };
+
+  signup = async values => {
+    try {
+      const { data } = await axiosInstance.post(this.endpoint, values);
+      return data;
+    } catch (err) {
+      console.error(err);
+      throw err;
     }
   };
 }

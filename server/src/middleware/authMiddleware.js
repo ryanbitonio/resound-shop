@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/userModel.js";
 
-export const protect = async (req, res, next) => {
+const protect = async (req, res, next) => {
   let token;
 
   if (
@@ -27,10 +27,12 @@ export const protect = async (req, res, next) => {
   }
 };
 
-export const googleProtect = (req, res, next) => {
+const googleProtect = (req, res, next) => {
   if (req.user) {
     res.status(200).send(req.user);
   } else {
     next();
   }
 };
+
+export { protect, googleProtect };

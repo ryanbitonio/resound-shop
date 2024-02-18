@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 
 import {
   Form,
@@ -14,16 +13,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { authSchema } from "@/lib/validations/auth";
 
-import axios from "axios";
 import { Icons } from "../icons";
 
-import { toast } from "sonner";
-import ApiClient from "@/services/api-client";
-
-const apiClient = new ApiClient("/api/user/signup");
+import useSignup from "../hooks/useSignup";
 
 const SignupForm = () => {
-  const navigate = useNavigate();
+  const { mutate } = useSignup();
 
   const form = useForm({
     resolver: zodResolver(authSchema),
@@ -37,25 +32,10 @@ const SignupForm = () => {
     control,
     formState: { isSubmitting },
     handleSubmit,
-    reset,
-    setFocus,
   } = form;
 
   async function onSubmit(values) {
-    try {
-      apiClient.post(values);
-
-      navigate("/signin");
-
-      toast.success("Registered Successfully!", {
-        description: "You may now login your account.",
-      });
-    } catch (err) {
-      console.error(err);
-      toast.error("Email is already taken. Please try another.");
-    } finally {
-      setFocus("email");
-    }
+    mutate(values);
   }
 
   return (
