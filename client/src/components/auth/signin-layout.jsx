@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import SigninForm from "../forms/signin-form";
 
 const SigninAuthLayout = () => {
+
   return (
     <Card className="w-[26rem]">
       <CardHeader className="space-y-4">
@@ -23,7 +24,7 @@ const SigninAuthLayout = () => {
           </CardDescription>
         </div>
         <Button asChild variant="outline" type="button">
-          <Link to="http://localhost:8000/auth/google">
+          <Link to="http://localhost:8000/auth/google" >
             <Icons.google className="w-4 h-4 mr-2 " />
             Google
           </Link>

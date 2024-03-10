@@ -32,10 +32,12 @@ const SignupForm = () => {
     control,
     formState: { isSubmitting },
     handleSubmit,
+    setFocus,
   } = form;
 
-  async function onSubmit(values) {
+  function onSubmit(values) {
     mutate(values);
+    setFocus("email");
   }
 
   return (

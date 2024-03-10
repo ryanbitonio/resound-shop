@@ -43,7 +43,7 @@ export const signinUser = async (req, res) => {
   if (
     userExists &&
     userExists.signinMethod === "personal" &&
-    bcrypt.compare(password, userExists.password)
+    (await userExists.matchPassword(password))
   ) {
     res.json({
       _id: userExists.id,
