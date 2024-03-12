@@ -6,6 +6,7 @@ import Layout from "../components/pages/layout";
 import ProductItem from "../components/pages/product-item";
 import Signup from "../components/pages/signup";
 import PrivateRoutes from "./private-routes";
+import VerifyEmail from "@/components/pages/verify-email";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "/signup", element: <Signup /> },
+  { path: "/signup/verify-email", element: <VerifyEmail /> },
   { path: "/signin", element: <Signin /> },
 ]);
 

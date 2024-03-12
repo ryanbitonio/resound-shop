@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "email dev --dir client/src/emails",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ms": "^2.1.3"
+    "@react-email/components": "0.0.15",
+    "ms": "^2.1.3",
+    "react-email": "2.1.0",
+    "resend": "^3.2.0"
   }
 }

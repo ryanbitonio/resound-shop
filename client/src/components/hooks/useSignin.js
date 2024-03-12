@@ -9,7 +9,7 @@ const useSignin = () => {
   const navigate = useNavigate();
 
   return useMutation({
-    mutationFn: values => apiClient.signin(values),
+    mutationFn: values => apiClient.post(values),
     onSuccess: data => {
       navigate("/");
 

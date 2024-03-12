@@ -1,6 +1,10 @@
 import bcrypt from "bcrypt";
 import User from "../models/userModel.js";
 import generateToken from "../utils/generateToken.js";
+import { Resend } from "resend";
+import path from "path";
+import fs from "fs";
+import { generateSecureNumericOTP } from "../utils/generateOTP.js";
 
 export const signupUser = async (req, res) => {
   const { email, password } = req.body;
@@ -72,4 +76,36 @@ export const failedLogin = (req, res) => {
   res.json({
     error: "Failed to log in",
   });
+};
+
+export const verifyEmail = async (req, res) => {
+  const resend = new Resend("re_N2ddVwqH_6YdcKEtgyDsbRwMyuPcEFeGW");
+  const verifyEmail = path.join(
+    "C:/Users/Mary Joy/Desktop/Projects/resound-shop/server/src/views",
+    "verifyEmail.html"
+  );
+  let html = fs.readFileSync(verifyEmail, "utf8");
+  const otp = generateSecureNumericOTP();
+  html = html.replace("{{otp}}", otp);
+
+  const { data, error } = await resend.emails.send({
+    from: "onboarding@resend.dev",
+    to: "ryanbitonio.ayang@gmail.com",
+    subject: `Your OTP is ${otp}`,
+    html: html,
+  });
+
+  if (error) {
+    return res.status(400).json(error);
+  }
+
+  return res.status(200).json(data);
+};
+
+export const verifyUser = (req, res) => {
+  if (req.user) {
+    res.status(200).send(req.user);
+  } else {
+    res.status(401).json({ message: "Not authorized" });
+  }
 };

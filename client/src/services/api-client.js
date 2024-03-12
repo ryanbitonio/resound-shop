@@ -28,17 +28,7 @@ class ApiClient {
     }
   };
 
-  signin = async values => {
-    try {
-      const { data } = await axiosInstance.post(this.endpoint, values);
-      return data;
-    } catch (err) {
-      console.error(err);
-      throw err;
-    }
-  };
-
-  signup = async values => {
+  post = async values => {
     try {
       const { data } = await axiosInstance.post(this.endpoint, values);
       return data;

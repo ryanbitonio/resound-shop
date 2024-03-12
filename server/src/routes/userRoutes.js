@@ -4,6 +4,8 @@ import {
   signinUser,
   signoutUser,
   signupUser,
+  verifyEmail,
+  verifyUser,
 } from "../controllers/userController.js";
 
 import limiter from "../utils/rateLimit.js";
@@ -14,12 +16,14 @@ router.post("/signup", signupUser);
 router.post("/signin", limiter, signinUser);
 router.get("/signout", signoutUser);
 router.get("/failure", failedLogin);
-router.get("/verify", (req, res) => {
-  if (req.user) {
-    res.status(200).send(req.user);
-  } else {
-    res.status(401).json({ message: "Not authorized" });
-  }
-});
+router.get('/signup/verify-email', verifyEmail)
+router.get("/verify", verifyUser);
 
 export default router;
+
+
+
+
+
+
+

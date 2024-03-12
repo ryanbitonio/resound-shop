@@ -3,24 +3,23 @@ import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-const apiClient = new ApiClient("/api/user/signup");
+const apiClient = new ApiClient("/api/user/signup/verify-email");
 
-const useSignup = () => {
+const useVerifyEmail = () => {
   const navigate = useNavigate();
 
   return useMutation({
     mutationFn: values => apiClient.post(values),
     onSuccess: () => {
-      navigate("/signup/verify-email");
-      toast.success("Check your email", {
-        description: "We sent you a 6-digit verification code.",
+      navigate("/signin");
+      toast.success("Registered Successfully!", {
+        description: "You may now login your account.",
       });
     },
     onError: err => {
       console.error(err);
-      toast.error("Email is already taken. Please try another.");
     },
   });
 };
 
-export default useSignup;
+export default useVerifyEmail;
