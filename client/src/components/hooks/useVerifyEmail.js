@@ -1,24 +1,16 @@
 import ApiClient from "@/services/api-client";
-import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 const apiClient = new ApiClient("/api/user/signup/verify-email");
 
 const useVerifyEmail = () => {
-  const navigate = useNavigate();
-
-  return useMutation({
-    mutationFn: values => apiClient.post(values),
-    onSuccess: () => {
-      navigate("/signin");
-      toast.success("Registered Successfully!", {
-        description: "You may now login your account.",
-      });
-    },
-    onError: err => {
-      console.error(err);
-    },
+  return useQuery({
+    queryKey: ["otp"],
+    queryFn: values => apiClient.getAll(values),
+    refetchInterval: false,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
 };
 

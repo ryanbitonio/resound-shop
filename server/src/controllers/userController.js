@@ -1,10 +1,10 @@
 import bcrypt from "bcrypt";
-import User from "../models/userModel.js";
-import generateToken from "../utils/generateToken.js";
-import { Resend } from "resend";
-import path from "path";
 import fs from "fs";
+import path from "path";
+import { Resend } from "resend";
+import User from "../models/userModel.js";
 import { generateSecureNumericOTP } from "../utils/generateOTP.js";
+import generateToken from "../utils/generateToken.js";
 
 export const signupUser = async (req, res) => {
   const { email, password } = req.body;
@@ -79,7 +79,7 @@ export const failedLogin = (req, res) => {
 };
 
 export const verifyEmail = async (req, res) => {
-  const resend = new Resend("re_N2ddVwqH_6YdcKEtgyDsbRwMyuPcEFeGW");
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const verifyEmail = path.join(
     "C:/Users/Mary Joy/Desktop/Projects/resound-shop/server/src/views",
     "verifyEmail.html"

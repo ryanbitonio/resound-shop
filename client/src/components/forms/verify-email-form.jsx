@@ -17,7 +17,7 @@ import { Icons } from "../icons";
 import useVerifyEmail from "../hooks/useVerifyEmail";
 
 const VerifyEmailForm = () => {
-  // const { mutate } = useVerifyEmail();
+  const { data } = useVerifyEmail();
 
   const form = useForm({
     resolver: zodResolver(authSchema),
@@ -34,7 +34,7 @@ const VerifyEmailForm = () => {
   } = form;
 
   function onSubmit(values) {
-    // mutate(values);
+    console.log(data)
     setFocus("code");
   }
 
