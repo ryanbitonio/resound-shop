@@ -67,10 +67,7 @@ const SiteHeader = () => {
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <Link
-                  to={
-                    `${import.meta.env.SERVER_URL}/api/user/signout`
-                    || "http://localhost:8000/api/user/signout"
-                  }
+                  to={`${import.meta.env.VITE_SERVER_URL || "http://localhost:8000"}/api/user/signout`}
                   onClick={() => localStorage.removeItem("token")}
                 >
                   <DropdownMenuItem>
