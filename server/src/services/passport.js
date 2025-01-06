@@ -7,7 +7,10 @@ import "dotenv/config";
 const GOOGLE_OPTIONS = {
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "/auth/google/redirect",
+  callbackURL:
+    process.env.NODE_ENV === "production"
+      ? "https://resound-shop.onrender.com/auth/google/redirect"
+      : "http://localhost:8000/auth/google/redirect",
 };
 
 const verifyCallback = async (accessToken, refreshToken, profile, done) => {
