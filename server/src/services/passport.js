@@ -7,7 +7,9 @@ import "dotenv/config";
 const GOOGLE_OPTIONS = {
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "/auth/google/redirect",
+  callbackURL: `${
+    process.env.CLIENT_URL || "http://localhost:8000"
+  }/auth/google/redirect`,
 };
 
 const verifyCallback = async (accessToken, refreshToken, profile, done) => {
