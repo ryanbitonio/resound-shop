@@ -34,6 +34,7 @@ app.use(
     maxAge: ms("1d"),
     keys: [generateKey(), generateKey()],
     sameSite: "none",
+    secure: true,
   })
 );
 
