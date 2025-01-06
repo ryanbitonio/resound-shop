@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" \"npm run email\"",
     "email": "email dev --dir server/src/views",
