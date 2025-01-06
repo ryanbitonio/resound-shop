@@ -24,7 +24,7 @@ const SigninAuthLayout = () => {
           </CardDescription>
         </div>
         <Button asChild variant="outline" type="button">
-          <Link to="http://localhost:8000/auth/google" >
+          <Link to={`${import.meta.env.SERVER_URL}/auth/google` || "http://localhost:8000/auth/google"} >
             <Icons.google className="w-4 h-4 mr-2 " />
             Google
           </Link>

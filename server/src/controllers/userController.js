@@ -68,7 +68,9 @@ export const signoutUser = (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:5173/signin");
+    res.redirect(
+      `${process.env.CLIENT_URL}/signin` || "http://localhost:5173/signin"
+    );
   });
 };
 

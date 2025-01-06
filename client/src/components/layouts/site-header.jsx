@@ -67,7 +67,10 @@ const SiteHeader = () => {
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <Link
-                  to="http://localhost:8000/api/user/signout"
+                  to={
+                    `${import.meta.env.SERVER_URL}/api/user/signout`
+                    || "http://localhost:8000/api/user/signout"
+                  }
                   onClick={() => localStorage.removeItem("token")}
                 >
                   <DropdownMenuItem>
@@ -80,7 +83,7 @@ const SiteHeader = () => {
             </DropdownMenu>
           </div>
         </div>
-      </header>
+      </header >
     </>
   );
 };
