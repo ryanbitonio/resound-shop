@@ -33,7 +33,7 @@ app.use(
   cookieSession({
     maxAge: ms("1d"),
     keys: [generateKey(), generateKey()],
-    sameSite: "none",
+    sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
   })
 );
