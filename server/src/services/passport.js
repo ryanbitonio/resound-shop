@@ -8,7 +8,7 @@ const GOOGLE_OPTIONS = {
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: `${
-    process.env.CLIENT_URL || "http://localhost:8000"
+    process.env.SERVER_URL || "http://localhost:8000"
   }/auth/google/redirect`,
 };
 
