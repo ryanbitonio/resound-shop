@@ -105,6 +105,7 @@ export const verifyEmail = async (req, res) => {
 
 export const verifyUser = (req, res) => {
   if (req.user) {
+    console.log("AYANG", req.user);
     res.status(200).send(req.user);
   } else {
     res.status(401).json({ message: "Not authorized" });
