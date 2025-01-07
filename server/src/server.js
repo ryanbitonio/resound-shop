@@ -34,8 +34,8 @@ app.use(
     name: "user",
     maxAge: ms("1d"),
     keys: [generateKey(), generateKey()],
-    sameSite: process.env.NODE_ENV === "production" ? "none" : lax,
-    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+    secure: process.env.NODE_ENV === "production" ? "true" : false,
   })
 );
 

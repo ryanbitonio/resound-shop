@@ -14,7 +14,7 @@ const router = express.Router();
 
 router.post("/signup", signupUser);
 router.post("/signin", limiter, signinUser);
-router.get("/signout", signoutUser);
+router.post("/signout", signoutUser);
 router.get("/failure", failedLogin);
 router.get("/signup/verify-email", verifyEmail);
 router.get("/verify", verifyUser);
