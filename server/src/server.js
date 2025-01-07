@@ -31,9 +31,10 @@ app.use(
 
 app.use(
   cookieSession({
+    name: "user",
     maxAge: ms("1d"),
     keys: [generateKey(), generateKey()],
-    sameSite: "lax",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : lax,
     secure: process.env.NODE_ENV === "production",
   })
 );
