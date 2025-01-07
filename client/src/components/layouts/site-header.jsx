@@ -16,13 +16,8 @@ import CartSheet from "../ui/cart-sheet";
 import Search from "../ui/search";
 import { MainNav } from "./main-nav";
 import MobileNav from "./mobile-nav";
-import useSignout from "../hooks/useSignout";
-
 
 const SiteHeader = () => {
-
-  const { mutate } = useSignout()
-
   return (
     <>
       <header
@@ -71,15 +66,16 @@ const SiteHeader = () => {
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <Button
-                  onClick={() => mutate()}
-                > Logout
+                <Link
+                  to={`${import.meta.env.VITE_SERVER_URL || "http://localhost:8000"}/api/user/signout`}
+                  onClick={() => localStorage.removeItem("token")}
+                >
                   <DropdownMenuItem>
                     <Icons.logout className="w-4 h-4 mr-2" />
                     <span>Log out</span>
                     <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
                   </DropdownMenuItem>
-                </Button>
+                </Link>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
