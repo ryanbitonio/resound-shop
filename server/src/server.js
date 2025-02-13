@@ -22,12 +22,12 @@ const PORT = process.env.PORT || 8000;
 
 export const app = express();
 
+app.set("trust proxy", 1);
+
 app.use(
   cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173",
     credentials: true,
-    secure: true,
-    sameSite: "none",
   })
 );
 
@@ -36,6 +36,9 @@ app.use(
     name: "user",
     maxAge: ms("1d"),
     keys: [generateKey(), generateKey()],
+    secure: true,
+    sameSite: "None",
+    httpOnly: true,
   })
 );
 

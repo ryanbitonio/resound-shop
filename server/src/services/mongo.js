@@ -11,9 +11,7 @@ mongoose.connection.on("error", err => {
 
 export const mongoConnect = async () => {
   try {
-    const connect = await mongoose.connect(
-      process.env.DEV_MONGODB_URI || process.env.PROD_MONGODB_URI
-    );
+    const connect = await mongoose.connect(process.env.DEV_MONGODB_URI);
     console.log(`MongoDB Connected: ${connect.connection.host}`);
   } catch (err) {
     console.log(err);
