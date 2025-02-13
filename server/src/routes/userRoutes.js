@@ -9,6 +9,7 @@ import {
 } from "../controllers/userController.js";
 
 import limiter from "../utils/rateLimit.js";
+import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
@@ -17,6 +18,6 @@ router.post("/signin", limiter, signinUser);
 router.get("/signout", signoutUser);
 router.get("/failure", failedLogin);
 router.get("/signup/verify-email", verifyEmail);
-router.get("/verify", verifyUser);
+router.get("/verify", protect, verifyUser);
 
 export default router;
