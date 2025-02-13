@@ -36,9 +36,8 @@ app.use(
     name: "user",
     maxAge: ms("1d"),
     keys: [generateKey(), generateKey()],
-    secure: true,
-    sameSite: "None",
-    httpOnly: true,
+    secure: process.env.NODE_ENV === "production" ? true : false,
+    sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
   })
 );
 
