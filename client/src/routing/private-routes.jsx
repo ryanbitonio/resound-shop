@@ -1,6 +1,5 @@
 import useAuth from "@/components/hooks/useAuth";
 import useSignin from "@/components/hooks/useSignin";
-import useAuthStore from "@/lib/authStore";
 import { useState } from "react";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
 
@@ -13,9 +12,9 @@ const PrivateRoutes = () => {
 
   const localuser = localStorage.getItem('token')
 
-  const user =  googleuser ?? localuser;
+  const user = googleuser ?? localuser;
 
-  console.log('current user: ', user)
+  console.log('current user in frontend: ', user)
 
   if (isLoading)
     return (

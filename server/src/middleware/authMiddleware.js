@@ -1,8 +1,7 @@
 import jwt from "jsonwebtoken";
-import asyncHandler from "express-async-handler";
 import User from "../models/userModel.js";
 
-const protect = asyncHandler(async (req, res, next) => {
+const protect = async (req, res, next) => {
   let token;
 
   if (
@@ -13,10 +12,12 @@ const protect = asyncHandler(async (req, res, next) => {
       token = req.headers.authorization.split(" ")[1];
       const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
       req.user = await User.findById(decoded.id).select("-password");
+
       next();
-    } catch (error) {
+    } catch (err) {
+      console.log(err);
       res.status(401);
-      throw new Error("Not authorized, token failed");
+      throw new Error("You are not authorized");
     }
   }
 
@@ -24,7 +25,7 @@ const protect = asyncHandler(async (req, res, next) => {
     res.status(401);
     throw new Error("Not authorized, no token");
   }
-});
+};
 
 const googleProtect = (req, res, next) => {
   if (req.user) {
